@@ -52,3 +52,7 @@ Bangle.on('accel', acc => {
 setWatch(() => {
   Bangle.off();
 }, BTN3);
+
+setInterval(() => {
+  g.drawString('Battery: ' + E.getBattery() + '%', 0, 200, true);
+}, 1000);
