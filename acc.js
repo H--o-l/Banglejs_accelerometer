@@ -39,14 +39,16 @@ Bangle.setOptions({
   lcdPowerTimeout: 0,
   backlightTimeout: 0,
 });
-Bangle.setPollInterval(100);
+Bangle.setPollInterval(80);
 
 g.clear(true);
 g.setFont('4x6', 2);
 Bangle.on('accel', acc => {
   const text = acc.x + '\n' + acc.y + '\n' + acc.z + '\n' + acc.diff + '\n' + acc.msg;
-  // g.clear();
   g.drawString(text, 0, 40, true);
+  Bluetooth.print('s' + Math.round(acc.x * 100) + ','
+                      + Math.round(acc.y * 100) + ','
+                      + Math.round(acc.z * 100) + 'e');
 });
 
 setWatch(() => {
