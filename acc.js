@@ -39,7 +39,7 @@ Bangle.setOptions({
   lcdPowerTimeout: 0,
   backlightTimeout: 0,
 });
-Bangle.setPollInterval(80);
+Bangle.setPollInterval(50);
 
 g.clear(true);
 g.setFont('4x6', 2);
